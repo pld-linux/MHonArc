@@ -12,7 +12,7 @@ Patch0:		MHonArc-perl.patch.gz
 Patch1:		MHonArc-FHS2.patch
 URL:		http://www.oac.uci.edu/indiv/ehood/mhonarc.html
 Icon:		monicon.gif
-BuildPrereq:	perl
+BuildRequires:	perl
 BuildArch:	noarch
 BuildRoot:	/tmp/%{name}-%{version}-root
 
