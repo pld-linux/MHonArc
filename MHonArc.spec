@@ -1,18 +1,20 @@
-Summary:     An Email-to-HTML converter
-Summary(pl): Konwerter Poczta->HTML
-Name:        MHonArc
-Version:     2.3.3
-Release:     2
-Copyright:   GPL
-Group:       Applications/Mail
-Group(pl):   Aplikacje/Poczta
-Vendor:      Earl Hood <ehood@medusa.acs.uci.edu>
-Source:      http://www.oac.uci.edu/indiv/ehood/tar/%{name}%{version}.tar.gz
-Patch:       MHonArc.perl.diff
-URL:         http://www.oac.uci.edu/indiv/ehood/mhonarc.html
-Icon:        monicon.gif
-BuildArch:   noarch
-BuildRoot:   /tmp/%{name}-%{version}-root
+Summary:	An Email-to-HTML converter
+Summary(pl):	Konwerter Poczta->HTML
+Name:		MHonArc
+Version:	2.3.3
+Release:	3
+Copyright:	GPL
+Group:		Applications/Mail
+Group(pl):	Aplikacje/Poczta
+Vendor:		Earl Hood <ehood@medusa.acs.uci.edu>
+Source:		http://www.oac.uci.edu/indiv/ehood/tar/%{name}%{version}.tar.gz
+Patch0:		MHonArc-perl.patch.gz
+Patch1:		MHonArc-FHS2.patch
+URL:		http://www.oac.uci.edu/indiv/ehood/mhonarc.html
+Icon:		monicon.gif
+BuildPrereq:	perl
+BuildArch:	noarch
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 MHonArc is a Perl mail-to-HTML converter. MHonArc provides HTML mail
@@ -26,18 +28,19 @@ MHonArc wspiera MIME oraz ³atwo przystosowuje siê do wymagañ u¿ytkownika.
 
 %prep
 %setup -q -n %{name}%{version}
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/{bin,lib/MHonArc}
+install -d $RPM_BUILD_ROOT/usr/{bin,share/MHonArc}
 
 install -s mhonarc $RPM_BUILD_ROOT/usr/bin
 install -s mha-dbedit $RPM_BUILD_ROOT/usr/bin
 install -s mha-dbrecover $RPM_BUILD_ROOT/usr/bin
-install lib/* $RPM_BUILD_ROOT/usr/lib/MHonArc
+install lib/* $RPM_BUILD_ROOT/usr/share/MHonArc
 
-gzip -9nf doc/* examples/* extras/* logo/* ACKNOWLG BUGS CHANGES RELNOTES
+gzip -9nf ACKNOWLG BUGS CHANGES RELNOTES
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -48,10 +51,14 @@ rm -rf $RPM_BUILD_ROOT
 %doc {ACKNOWLG,BUGS,CHANGES,RELNOTES}.gz
 
 %attr(755,root,root) /usr/bin/*
-%dir /usr/lib/MHonArc
-/usr/lib/MHonArc/*
+/usr/share/MHonArc
 
 %changelog
+* Mon May 10 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [2.3.3-3]
+- added BuildPrereq: perl,
+- now package is FHS 2.0 compiliat.
+
 * Tue Feb  9 1999 Micha³ Kuratczyk <kurkens@polbox.com>
   [2.3.3-2]
 - added gzipping documentation
