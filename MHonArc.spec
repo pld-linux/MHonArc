@@ -13,7 +13,7 @@ Patch1:		MHonArc-FHS2.patch
 URL:		http://www.oac.uci.edu/indiv/ehood/mhonarc.html
 BuildRequires:	perl
 BuildArch:	noarch
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 MHonArc is a Perl mail-to-HTML converter. MHonArc provides HTML mail
