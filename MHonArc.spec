@@ -12,7 +12,7 @@ Source0:	http://www.mhonarc.org/tar/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-FHS2.patch
 Patch1:		%{name}-DESTDIR.aptch
 URL:		http://www.mhonarc.org/
-BuildRequires:	perl
+BuildRequires:	perl-base
 Requires:	perl-Unicode-MapUTF8
 Requires:	perl-Unicode-String
 Requires:	perl-modules >= 5.8
