@@ -5,15 +5,10 @@ Name:		MHonArc
 Version:	2.4.9
 Release:	1
 License:	GPL
+Vendor:		Earl Hood <ehood@medusa.acs.uci.edu>
 Group:		Applications/Mail
 Group(de):	Applikationen/Post
 Group(pl):	Aplikacje/Poczta
-Group(pt):	Aplicações/Correio Eletrônico
-Vendor:		Earl Hood <ehood@medusa.acs.uci.edu>
-Group:		
-Group():	
-Group(de):	Applikationen/Archivierung
-Group(pl):	Aplikacje/Archiwizacja
 Group(pt):	Aplicações/Correio Eletrônico
 Source0:	http://www.oac.uci.edu/indiv/ehood/tar/%{name}%{version}.tar.bz2
 Patch0:		%{name}-perl.patch.gz
