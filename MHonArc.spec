@@ -2,13 +2,13 @@
 Summary:	An Email-to-HTML converter
 Summary(pl):	Konwerter Poczta->HTML
 Name:		MHonArc
-Version:	2.6.3
+Version:	2.6.8
 Release:	1
 License:	GPL
 Vendor:		Earl Hood <ehood@medusa.acs.uci.edu>
 Group:		Applications/Mail
-Source0:	http://www.mhonarc.org/tar/%{name}%{version}.tar.bz2
-# Source0-md5:	00ade643290b287c40d098f2acd1c1b6
+Source0:	http://www.mhonarc.org/tar/%{name}-%{version}.tar.bz2
+# Source0-md5:	9ceb72c37dc7bd0a8ae1a5c6a4e8c4a5
 Patch0:		%{name}-FHS2.patch
 Patch1:		%{name}-DESTDIR.aptch
 URL:		http://www.mhonarc.org/
@@ -29,7 +29,7 @@ w±tku. MHonArc wspiera MIME oraz ³atwo przystosowuje siê do wymagañ
 u¿ytkownika.
 
 %prep
-%setup -q -n %{name}%{version}
+%setup -q
 perl -p -i -e 's|# ?!/usr/local/bin/perl|#!/usr/bin/perl|' `find . -type f`
 %patch0 -p1
 %patch1 -p1
