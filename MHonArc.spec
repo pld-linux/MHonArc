@@ -5,6 +5,7 @@ Version:	2.4.5
 Release:	1
 License:	GPL
 Group:		Applications/Mail
+Group(pt):	Aplicações/Correio Eletrônico
 Group(pl):	Aplikacje/Poczta
 Vendor:		Earl Hood <ehood@medusa.acs.uci.edu>
 Source0:	http://www.oac.uci.edu/indiv/ehood/tar/%{name}%{version}.tar.bz2
@@ -17,13 +18,15 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 MHonArc is a Perl mail-to-HTML converter. MHonArc provides HTML mail
-archiving with index, mail thread linking, etc; plus other capabilities
-including support for MIME and powerful user customization features. 	
+archiving with index, mail thread linking, etc; plus other
+capabilities including support for MIME and powerful user
+customization features.
 
 %description -l pl
 MHonArc to konwerter poczta->HTML napisany w perlu. MHonArc pozwala na
-archiwizowanie poczty w postaci stron HTML z indeksowaniem wed³ug w±tku.
-MHonArc wspiera MIME oraz ³atwo przystosowuje siê do wymagañ u¿ytkownika.
+archiwizowanie poczty w postaci stron HTML z indeksowaniem wed³ug
+w±tku. MHonArc wspiera MIME oraz ³atwo przystosowuje siê do wymagañ
+u¿ytkownika.
 
 %prep
 %setup -q -n %{name}%{version}
