@@ -2,16 +2,15 @@
 Summary:	An Email-to-HTML converter
 Summary(pl):	Konwerter Poczta->HTML
 Name:		MHonArc
-Version:	2.5.2
-Release:	1
+Version:	2.5.3
+Release:	0.1
 License:	GPL
 Vendor:		Earl Hood <ehood@medusa.acs.uci.edu>
 Group:		Applications/Mail
-Source0:	http://www.oac.uci.edu/indiv/ehood/tar/%{name}%{version}.tar.bz2
-Patch0:		%{name}-perl.patch.gz
-Patch1:		%{name}-FHS2.patch
-Patch2:		%{name}-DESTDIR.aptch
-URL:		http://www.oac.uci.edu/indiv/ehood/mhonarc.html
+Source0:	http://www.mhonarc.org/tar/%{name}%{version}.tar.bz2
+Patch0:		%{name}-FHS2.patch
+Patch1:		%{name}-DESTDIR.aptch
+URL:		http://www.mhonarc.org/
 BuildRequires:	perl
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -30,9 +29,9 @@ u¿ytkownika.
 
 %prep
 %setup -q -n %{name}%{version}
+perl -p -i -e 's|# ?!/usr/local/bin/perl|#!/usr/bin/perl|' `find . -type f`
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 perl Makefile.PL
@@ -42,7 +41,8 @@ perl Makefile.PL
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_datadir}/%{name}/MHonArc/CharEnt}
 
-install mhonarc mha-* $RPM_BUILD_ROOT%{_bindir}
+install mhonarc mha-dbedit mha-dbrecover mha-decode  $RPM_BUILD_ROOT%{_bindir}
+
 install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 install lib/*.pl $RPM_BUILD_ROOT%{_datadir}/%{name}
