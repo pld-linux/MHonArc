@@ -1,0 +1,11 @@
+--- MHonArc2.5.2/Makefile.PL~	Thu Jan 17 11:45:38 2002
++++ MHonArc2.5.2/Makefile.PL	Thu Jan 17 11:45:38 2002
+@@ -61,7 +61,7 @@
+ release-prep: autodoc versions relnotes bugs install-doc
+ 
+ install:
+-	\$(PERL) \$(INSTALLPRG) -batch $instme_args
++	\$(PERL) \$(INSTALLPRG) -batch $instme_args DESTDIR=\$(DESTDIR)
+ 
+ install-ask:
+ 	\$(PERL) \$(INSTALLPRG) $instme_args
