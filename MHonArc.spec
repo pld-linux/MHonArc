@@ -26,7 +26,7 @@ capabilities including support for MIME and powerful user
 customization features.
 
 %description -l pl
-MHonArc to konwerter poczta->HTML napisany w perlu. MHonArc pozwala na
+MHonArc to konwerter poczta->HTML napisany w Perlu. MHonArc pozwala na
 archiwizowanie poczty w postaci stron HTML z indeksowaniem wed³ug
 w±tku. MHonArc wspiera MIME oraz ³atwo przystosowuje siê do wymagañ
 u¿ytkownika.
