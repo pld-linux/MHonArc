@@ -2,13 +2,13 @@
 Summary:	An Email-to-HTML converter
 Summary(pl):	Konwerter Poczta->HTML
 Name:		MHonArc
-Version:	2.6.8
+Version:	2.6.9
 Release:	1
 License:	GPL
 Vendor:		Earl Hood <ehood@medusa.acs.uci.edu>
 Group:		Applications/Mail
 Source0:	http://www.mhonarc.org/tar/%{name}-%{version}.tar.bz2
-# Source0-md5:	9ceb72c37dc7bd0a8ae1a5c6a4e8c4a5
+# Source0-md5:	6ec187e068b7bc795da3df3d16d989a9
 Patch0:		%{name}-FHS2.patch
 Patch1:		%{name}-DESTDIR.aptch
 URL:		http://www.mhonarc.org/
