@@ -43,10 +43,13 @@ gzip -9nf doc/* examples/* extras/* logo/* ACKNOWLG BUGS CHANGES RELNOTES
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(644, root, root, 755)
-%doc doc examples extras logo ACKNOWLG BUGS CHANGES RELNOTES
-%attr(755, root, root) /usr/bin/*
-%attr(644, root, root, 755) /usr/lib/MHonArc/*
+%defattr(644,root,root,755)
+%doc doc examples extras logo 
+%doc {ACKNOWLG,BUGS,CHANGES,RELNOTES}.gz
+
+%attr(755,root,root) /usr/bin/*
+%dir /usr/lib/MHonArc
+/usr/lib/MHonArc/*
 
 %changelog
 * Tue Feb  9 1999 Micha³ Kuratczyk <kurkens@polbox.com>
