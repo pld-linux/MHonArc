@@ -57,7 +57,7 @@ rm -rf $RPM_BUILD_ROOT
 * Mon May 10 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [2.3.3-3]
 - added BuildPrereq: perl,
-- now package is FHS 2.0 compiliat.
+- now package is FHS 2.0 compliat.
 
 * Tue Feb  9 1999 Micha³ Kuratczyk <kurkens@polbox.com>
   [2.3.3-2]
