@@ -5,10 +5,10 @@ Version:	2.4.8
 Release:	1
 License:	GPL
 Group:		Applications/Mail
+Vendor:		Earl Hood <ehood@medusa.acs.uci.edu>
 Group(de):	Applikationen/Post
 Group(pl):	Aplikacje/Poczta
 Group(pt):	Aplicações/Correio Eletrônico
-Vendor:		Earl Hood <ehood@medusa.acs.uci.edu>
 Source0:	http://www.oac.uci.edu/indiv/ehood/tar/%{name}%{version}.tar.bz2
 Patch0:		%{name}-perl.patch.gz
 Patch1:		%{name}-FHS2.patch
@@ -38,8 +38,7 @@ rm -f *~
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
-install -d $RPM_BUILD_ROOT%{_datadir}/%{name}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_datadir}/%{name}}
 
 install mhonarc mha-*	$RPM_BUILD_ROOT%{_bindir}
 install man/*.1		$RPM_BUILD_ROOT%{_mandir}/man1
