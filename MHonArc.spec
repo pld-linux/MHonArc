@@ -1,7 +1,7 @@
 Summary:	An Email-to-HTML converter
 Summary(pl):	Konwerter Poczta->HTML
 Name:		MHonArc
-Version:	2.4.7
+Version:	2.4.8
 Release:	1
 License:	GPL
 Group:		Applications/Mail
@@ -38,11 +38,12 @@ rm -f *~
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_datadir}/%{name}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
+install -d $RPM_BUILD_ROOT%{_datadir}/%{name}
 
-install mhonarc mha-* $RPM_BUILD_ROOT%{_bindir}
-install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
-install lib/* $RPM_BUILD_ROOT%{_datadir}/%{name}
+install mhonarc mha-*	$RPM_BUILD_ROOT%{_bindir}
+install man/*.1		$RPM_BUILD_ROOT%{_mandir}/man1
+install lib/*		$RPM_BUILD_ROOT%{_datadir}/%{name}
 
 gzip -9nf ACKNOWLG BUGS CHANGES RELNOTES
 
@@ -54,4 +55,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc doc examples extras logo admin *.gz
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
-%{_mandir}/man*/*
+%{_mandir}/man?/*
