@@ -7,7 +7,7 @@ Copyright:   GPL
 Group:       Applications/Mail
 Group(pl):   Aplikacje/Poczta
 Vendor:      Earl Hood <ehood@medusa.acs.uci.edu>
-Source:      %{name}%{version}.tar.gz
+Source:      http://www.oac.uci.edu/indiv/ehood/tar/%{name}%{version}.tar.gz
 Patch:       MHonArc.perl.diff
 URL:         http://www.oac.uci.edu/indiv/ehood/mhonarc.html
 Icon:        monicon.gif
