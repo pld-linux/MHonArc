@@ -52,26 +52,3 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/MHonArc
-
-%changelog
-* Mon May 10 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [2.3.3-3]
-- added BuildPrereq: perl,
-- now package is FHS 2.0 compliant.
-
-* Tue Feb  9 1999 Micha³ Kuratczyk <kurkens@polbox.com>
-  [2.3.3-2]
-- added gzipping documentation
-- added stripping binaries
-
-* Sun Nov 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [2.3.3-1]
-- added package Icon,
-- modified pl translation.
-
-* Thu Nov 05 1998 Arkadiusz Mi¶kiewicz <misiek@misiek.eu.org>
-- added pl translation,
-- instead sed commands is now simple patch.
-
-* Sat Oct 30 1998 Arkadiusz Mi¶kiewicz <misiek@misiek.eu.org>
-- initial RPM release
