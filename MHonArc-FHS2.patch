@@ -1,0 +1,36 @@
+diff -Nru MHonArc2.3.3/mha-dbedit MHonArc2.3.3.new/mha-dbedit
+--- MHonArc2.3.3/mha-dbedit	Mon May 10 20:51:42 1999
++++ MHonArc2.3.3.new/mha-dbedit	Mon May 10 20:53:15 1999
+@@ -33,7 +33,7 @@
+ ##---------------------------------------------------------------------------##
+ 
+ MAIN: {
+-    unshift(@INC, '/usr/lib/MHonArc');	# Should I leave this line in?
++    unshift(@INC, '/usr/share/MHonArc');	# Should I leave this line in?
+ 
+     ## Initialize MHonArc
+     require 'mhamain.pl' || die qq/ERROR: Unable to require "mhamain.pl"\n/;
+diff -Nru MHonArc2.3.3/mha-dbrecover MHonArc2.3.3.new/mha-dbrecover
+--- MHonArc2.3.3/mha-dbrecover	Mon May 10 20:51:42 1999
++++ MHonArc2.3.3.new/mha-dbrecover	Mon May 10 20:53:24 1999
+@@ -33,7 +33,7 @@
+ ##---------------------------------------------------------------------------##
+ 
+ MAIN: {
+-    unshift(@INC, '/usr/lib/MHonArc');	# Should I leave this line in?
++    unshift(@INC, '/usr/share/MHonArc');	# Should I leave this line in?
+ 
+     ## Initialize MHonArc
+     require 'mhamain.pl' || die qq/ERROR: Unable to require "mhamain.pl"\n/;
+diff -Nru MHonArc2.3.3/mhonarc MHonArc2.3.3.new/mhonarc
+--- MHonArc2.3.3/mhonarc	Mon May 10 20:51:42 1999
++++ MHonArc2.3.3.new/mhonarc	Mon May 10 20:53:59 1999
+@@ -32,7 +32,7 @@
+ ##---------------------------------------------------------------------------##
+ 
+ MAIN: {
+-    unshift(@INC, '/usr/lib/MHonArc');	# Should I leave this line in?
++    unshift(@INC, '/usr/share/MHonArc');	# Should I leave this line in?
+ 
+     require 'mhamain.pl' || die qq/ERROR: Unable to require "mhamain.pl"\n/;
+     mhonarc::initialize();
