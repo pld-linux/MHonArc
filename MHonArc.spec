@@ -38,7 +38,7 @@ install -d $RPM_BUILD_ROOT/usr/{bin,share/MHonArc}
 install mhonarc $RPM_BUILD_ROOT/usr/bin
 install mha-dbedit $RPM_BUILD_ROOT/usr/bin
 install mha-dbrecover $RPM_BUILD_ROOT/usr/bin
-install lib/* $RPM_BUILD_ROOT/usr/share/MHonArc
+install lib/* $RPM_BUILD_ROOT%{_datadir}/MHonArc
 
 gzip -9nf ACKNOWLG BUGS CHANGES RELNOTES
 
@@ -51,7 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc {ACKNOWLG,BUGS,CHANGES,RELNOTES}.gz
 
 %attr(755,root,root) /usr/bin/*
-/usr/share/MHonArc
+%{_datadir}/MHonArc
 
 %changelog
 * Mon May 10 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
