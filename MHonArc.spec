@@ -8,6 +8,7 @@ License:	GPL
 Vendor:		Earl Hood <ehood@medusa.acs.uci.edu>
 Group:		Applications/Mail
 Source0:	http://www.mhonarc.org/tar/%{name}%{version}.tar.bz2
+# Source0-md5:	00ade643290b287c40d098f2acd1c1b6
 Patch0:		%{name}-FHS2.patch
 Patch1:		%{name}-DESTDIR.aptch
 URL:		http://www.mhonarc.org/
