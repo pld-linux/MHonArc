@@ -1,16 +1,17 @@
 Summary:	An Email-to-HTML converter
 Summary(pl):	Konwerter Poczta->HTML
 Name:		MHonArc
-Version:	2.4.5
+Version:	2.4.7
 Release:	1
 License:	GPL
 Group:		Applications/Mail
-Group(pt):	Aplicações/Correio Eletrônico
+Group(de):	Applikationen/Post
 Group(pl):	Aplikacje/Poczta
+Group(pt):	Aplicações/Correio Eletrônico
 Vendor:		Earl Hood <ehood@medusa.acs.uci.edu>
 Source0:	http://www.oac.uci.edu/indiv/ehood/tar/%{name}%{version}.tar.bz2
-Patch0:		MHonArc-perl.patch.gz
-Patch1:		MHonArc-FHS2.patch
+Patch0:		%{name}-perl.patch.gz
+Patch1:		%{name}-FHS2.patch
 URL:		http://www.oac.uci.edu/indiv/ehood/mhonarc.html
 BuildRequires:	perl
 BuildArch:	noarch
@@ -33,27 +34,24 @@ u¿ytkownika.
 %patch0 -p1
 %patch1 -p1
 
+rm -f *~
+
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d		$RPM_BUILD_ROOT%{_bindir}
-install -d		$RPM_BUILD_ROOT%{_mandir}/man1
-install -d		$RPM_BUILD_ROOT%{_datadir}/%{name}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_datadir}/%{name}}
 
-install mhonarc		$RPM_BUILD_ROOT%{_bindir}
-install mha-*		$RPM_BUILD_ROOT%{_bindir}
-install man/*.1		$RPM_BUILD_ROOT%{_mandir}/man1
-install lib/*		$RPM_BUILD_ROOT%{_datadir}/%{name}
+install mhonarc mha-* $RPM_BUILD_ROOT%{_bindir}
+install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
+install lib/* $RPM_BUILD_ROOT%{_datadir}/%{name}
 
-gzip -9nf ACKNOWLG BUGS CHANGES RELNOTES \
-	  $RPM_BUILD_ROOT%{_mandir}/man1/*.1
+gzip -9nf ACKNOWLG BUGS CHANGES RELNOTES
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc examples extras logo admin
-%doc {ACKNOWLG,BUGS,CHANGES,RELNOTES}.gz
+%doc doc examples extras logo admin *.gz
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/man*/*
 %{_datadir}/%{name}
+%{_mandir}/man*/*
