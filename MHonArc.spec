@@ -1,7 +1,7 @@
 Summary:	An Email-to-HTML converter
 Summary(pl):	Konwerter Poczta->HTML
 Name:		MHonArc
-Version:	2.4.2
+Version:	2.4.3
 Release:	1
 Copyright:	GPL
 Group:		Applications/Mail
