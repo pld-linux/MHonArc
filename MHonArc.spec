@@ -40,7 +40,7 @@ perl Makefile.PL
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_datadir}/%{name}/MHonArc/CharEnt}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_datadir}/%{name}/MHonArc/{Char,CharEnt,UTF8}}
 
 install mhonarc mha-dbedit mha-dbrecover mha-decode  $RPM_BUILD_ROOT%{_bindir}
 
@@ -48,7 +48,9 @@ install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 install lib/*.pl $RPM_BUILD_ROOT%{_datadir}/%{name}
 install lib/MHonArc/*.pm $RPM_BUILD_ROOT%{_datadir}/%{name}/MHonArc
-install lib/MHonArc/CharEnt*.pm $RPM_BUILD_ROOT%{_datadir}/%{name}/MHonArc/CharEnt
+install lib/MHonArc/Char/*.pm $RPM_BUILD_ROOT%{_datadir}/%{name}/MHonArc/Char
+install lib/MHonArc/CharEnt/*.pm $RPM_BUILD_ROOT%{_datadir}/%{name}/MHonArc/CharEnt
+install lib/MHonArc/UTF8/*.pm $RPM_BUILD_ROOT%{_datadir}/%{name}/MHonArc/UTF8
 
 %clean
 rm -rf $RPM_BUILD_ROOT
