@@ -49,14 +49,12 @@ install lib/*.pl $RPM_BUILD_ROOT%{_datadir}/%{name}
 install lib/MHonArc/*.pm $RPM_BUILD_ROOT%{_datadir}/%{name}/MHonArc
 install lib/MHonArc/CharEnt*.pm $RPM_BUILD_ROOT%{_datadir}/%{name}/MHonArc/CharEnt
 
-gzip -9nf ACKNOWLG BUGS CHANGES RELNOTES
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc examples extras logo admin *.gz
+%doc doc examples extras logo admin ACKNOWLG BUGS CHANGES RELNOTES
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_mandir}/man?/*
