@@ -1,8 +1,8 @@
 Summary:	An Email-to-HTML converter
 Summary(pl):	Konwerter Poczta->HTML
 Name:		MHonArc
-Version:	2.3.3
-Release:	3
+Version:	2.4.2
+Release:	1
 Copyright:	GPL
 Group:		Applications/Mail
 Group(pl):	Aplikacje/Poczta
@@ -33,12 +33,11 @@ MHonArc wspiera MIME oraz ³atwo przystosowuje siê do wymagañ u¿ytkownika.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/{bin,share/MHonArc}
+install -d		$RPM_BUILD_ROOT/usr/{bin,share/MHonArc}
 
-install mhonarc $RPM_BUILD_ROOT%{_bindir}
-install mha-dbedit $RPM_BUILD_ROOT%{_bindir}
-install mha-dbrecover $RPM_BUILD_ROOT%{_bindir}
-install lib/* $RPM_BUILD_ROOT%{_datadir}/MHonArc
+install mhonarc		$RPM_BUILD_ROOT%{_bindir}
+install mha-*		$RPM_BUILD_ROOT%{_bindir}
+install lib/*		$RPM_BUILD_ROOT%{_datadir}/MHonArc
 
 gzip -9nf ACKNOWLG BUGS CHANGES RELNOTES
 
@@ -47,7 +46,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc examples extras logo 
+%doc doc examples extras logo admin
 %doc {ACKNOWLG,BUGS,CHANGES,RELNOTES}.gz
 
 %attr(755,root,root) %{_bindir}/*
