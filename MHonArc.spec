@@ -35,9 +35,9 @@ MHonArc wspiera MIME oraz ³atwo przystosowuje siê do wymagañ u¿ytkownika.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/usr/{bin,share/MHonArc}
 
-install -s mhonarc $RPM_BUILD_ROOT/usr/bin
-install -s mha-dbedit $RPM_BUILD_ROOT/usr/bin
-install -s mha-dbrecover $RPM_BUILD_ROOT/usr/bin
+install mhonarc $RPM_BUILD_ROOT/usr/bin
+install mha-dbedit $RPM_BUILD_ROOT/usr/bin
+install mha-dbrecover $RPM_BUILD_ROOT/usr/bin
 install lib/* $RPM_BUILD_ROOT/usr/share/MHonArc
 
 gzip -9nf ACKNOWLG BUGS CHANGES RELNOTES
