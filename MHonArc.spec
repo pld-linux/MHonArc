@@ -13,6 +13,8 @@ Patch0:		%{name}-FHS2.patch
 Patch1:		%{name}-DESTDIR.aptch
 URL:		http://www.mhonarc.org/
 BuildRequires:	perl
+Requires:	perl-Unicode-MapUTF8
+Requires:	perl-Unicode-String
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
