@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	An Email-to-HTML converter
-Summary(pl.UTF-8):   Konwerter Poczta->HTML
+Summary(pl.UTF-8):	Konwerter Poczta->HTML
 Name:		MHonArc
 Version:	2.6.10
 Release:	1
