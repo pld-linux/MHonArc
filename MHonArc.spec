@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	An Email-to-HTML converter
-Summary(pl):	Konwerter Poczta->HTML
+Summary(pl.UTF-8):   Konwerter Poczta->HTML
 Name:		MHonArc
 Version:	2.6.10
 Release:	1
@@ -25,11 +25,11 @@ archiving with index, mail thread linking, etc; plus other
 capabilities including support for MIME and powerful user
 customization features.
 
-%description -l pl
+%description -l pl.UTF-8
 MHonArc to konwerter poczta->HTML napisany w Perlu. MHonArc pozwala na
-archiwizowanie poczty w postaci stron HTML z indeksowaniem wed³ug
-w±tku. MHonArc wspiera MIME oraz ³atwo przystosowuje siê do wymagañ
-u¿ytkownika.
+archiwizowanie poczty w postaci stron HTML z indeksowaniem wedÅ‚ug
+wÄ…tku. MHonArc wspiera MIME oraz Å‚atwo przystosowuje siÄ™ do wymagaÅ„
+uÅ¼ytkownika.
 
 %prep
 %setup -q
