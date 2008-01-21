@@ -2,17 +2,17 @@
 Summary:	An Email-to-HTML converter
 Summary(pl.UTF-8):	Konwerter Poczta->HTML
 Name:		MHonArc
-Version:	2.6.10
+Version:	2.6.16
 Release:	1
 License:	GPL
-Vendor:		Earl Hood <ehood@medusa.acs.uci.edu>
 Group:		Applications/Mail
-Source0:	http://www.mhonarc.org/tar/%{name}-%{version}.tar.bz2
-# Source0-md5:	337dfa5660fa158e5a4e3fd74b4c2ec1
+Source0:	http://www.mhonarc.org/release/MHonArc/tar/%{name}-%{version}.tar.bz2
+# Source0-md5:	1aae948971869d6fdf3d810d9894b3db
 Patch0:		%{name}-FHS2.patch
 Patch1:		%{name}-DESTDIR.aptch
 URL:		http://www.mhonarc.org/
 BuildRequires:	rpm-perlprov
+BuildRequires:	sed >= 4.0
 Requires:	perl-Unicode-MapUTF8
 Requires:	perl-Unicode-String
 Requires:	perl-modules >= 5.8
@@ -33,27 +33,23 @@ użytkownika.
 
 %prep
 %setup -q
-perl -p -i -e 's|# ?!/usr/local/bin/perl|#!/usr/bin/perl|' `find . -type f`
+%{__sed} -i -e 's,^#!.*bin/perl5\?,#!%{__perl},' $(grep -rl '^#!.*/bin/perl' .)
 %patch0 -p1
 %patch1 -p1
 
 %build
-perl Makefile.PL
+%{__perl} Makefile.PL
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_datadir}/%{name}/MHonArc/{Char,CharEnt,UTF8}}
-
-install mhonarc mha-dbedit mha-dbrecover mha-decode  $RPM_BUILD_ROOT%{_bindir}
-
-install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
-
-install lib/*.pl $RPM_BUILD_ROOT%{_datadir}/%{name}
-install lib/MHonArc/*.pm $RPM_BUILD_ROOT%{_datadir}/%{name}/MHonArc
-install lib/MHonArc/Char/*.pm $RPM_BUILD_ROOT%{_datadir}/%{name}/MHonArc/Char
-install lib/MHonArc/CharEnt/*.pm $RPM_BUILD_ROOT%{_datadir}/%{name}/MHonArc/CharEnt
-install lib/MHonArc/UTF8/*.pm $RPM_BUILD_ROOT%{_datadir}/%{name}/MHonArc/UTF8
+%{__perl} install.me \
+	-batch \
+	-nodoc \
+	-manpath=%{_mandir} \
+	-binpath=%{_bindir} \
+	-libpath=%{_datadir}/%{name} \
+	-root=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
