@@ -9,7 +9,6 @@ Group:		Applications/Mail
 Source0:	http://www.mhonarc.org/release/MHonArc/tar/%{name}-%{version}.tar.bz2
 # Source0-md5:	1aae948971869d6fdf3d810d9894b3db
 Patch0:		%{name}-FHS2.patch
-Patch1:		%{name}-DESTDIR.aptch
 URL:		http://www.mhonarc.org/
 BuildRequires:	rpm-perlprov
 BuildRequires:	sed >= 4.0
@@ -35,7 +34,6 @@ użytkownika.
 %setup -q
 %{__sed} -i -e 's,^#!.*bin/perl5\?,#!%{__perl},' $(grep -rl '^#!.*/bin/perl' .)
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__perl} Makefile.PL
