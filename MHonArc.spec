@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.perl
 Summary:	An Email-to-HTML converter
 Summary(pl.UTF-8):	Konwerter Poczta->HTML
 Name:		MHonArc
