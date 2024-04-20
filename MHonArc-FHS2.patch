@@ -10,30 +10,28 @@ diff -urN MHonArc2.4.2.orig/mha-dbedit MHonArc2.4.2/mha-dbedit
  
      ## Initialize MHonArc
      require 'mhamain.pl' || die qq/ERROR: Unable to require "mhamain.pl"\n/;
-diff -urN MHonArc2.4.2.orig/mha-dbrecover MHonArc2.4.2/mha-dbrecover
---- MHonArc2.4.2.orig/mha-dbrecover	Thu Aug 12 17:37:46 1999
-+++ MHonArc2.4.2/mha-dbrecover	Thu Aug 12 17:38:35 1999
-@@ -33,7 +33,7 @@
+--- MHonArc-2.6.19/mha-dbrecover.orig	2024-04-20 07:24:49.052203467 +0200
++++ MHonArc-2.6.19/mha-dbrecover	2024-04-20 07:28:10.667777889 +0200
+@@ -35,7 +35,7 @@ use Getopt::Long;
  ##---------------------------------------------------------------------------##
  
  MAIN: {
 -    unshift(@INC, 'lib');	# Should I leave this line in?
 +    unshift(@INC, '/usr/share/MHonArc');	# Should I leave this line in?
  
-     ## Initialize MHonArc
-     require 'mhamain.pl' || die qq/ERROR: Unable to require "mhamain.pl"\n/;
-diff -urN MHonArc2.4.2.orig/mha-decode MHonArc2.4.2/mha-decode
---- MHonArc2.4.2.orig/mha-decode	Thu Aug 12 17:37:46 1999
-+++ MHonArc2.4.2/mha-decode	Thu Aug 12 17:38:45 1999
-@@ -33,7 +33,7 @@
+     ## Grab options from @ARGV unique to this program
+     my %opts = ( );
+--- MHonArc-2.6.19/mha-decode.orig	2024-04-20 07:24:49.052203467 +0200
++++ MHonArc-2.6.19/mha-decode	2024-04-20 07:28:37.270967100 +0200
+@@ -35,7 +35,7 @@ use Getopt::Long;
  ##---------------------------------------------------------------------------##
  
  MAIN: {
 -    unshift(@INC, 'lib');	# Should I leave this line in?
 +    unshift(@INC, '/usr/share/MHonArc');	# Should I leave this line in?
  
-     ## Initialize MHonArc
-     require 'mhamain.pl' || die qq/ERROR: Unable to require "mhamain.pl"\n/;
+     ## Grab options from @ARGV unique to this program
+     my %opts = ( );
 diff -urN MHonArc2.4.2.orig/mhonarc MHonArc2.4.2/mhonarc
 --- MHonArc2.4.2.orig/mhonarc	Thu Aug 12 17:37:46 1999
 +++ MHonArc2.4.2/mhonarc	Thu Aug 12 17:39:20 1999
