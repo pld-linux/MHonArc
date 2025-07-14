@@ -32,7 +32,7 @@ użytkownika.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 # some files have /usr/local/bin/perl or /net/nf/bin/perl
 %{__sed} -i -e '1s,^#!.*bin/perl5\?,#!%{__perl},' $(grep -rl '^#!.*/bin/perl' .)
